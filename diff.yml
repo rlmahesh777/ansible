@@ -5,7 +5,6 @@
      command: diff  /file1/def  /file2/def2
      register: diff_result
    - debug:
-       var: diff_result
        msg: "{{diff_result}}"
      
    
