@@ -6,6 +6,6 @@
      register: diff_result
    - name: Show diff result
      debug:
-     msg: "{{diff_result.stdout}}"
+     msg:"{{diff_result.stdout}}"
      
    
