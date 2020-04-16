@@ -1,10 +1,15 @@
 - hosts: all
   become: true
   tasks:
-   - name: Generate diff
-     copy:
-        src: /file1/def
-        dest: /file2/def2
-     check_mode: yes
-     diff: yes
-     
+   - name: first file
+     stat:
+       path: /file1/def
+     register: first
+   - name: second file
+     stat:
+       path: /file2/def2
+     register: second
+   - debug:
+       msg: "File compare"
+
+
