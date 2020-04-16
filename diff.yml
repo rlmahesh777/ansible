@@ -4,12 +4,12 @@
    - name: first file
      stat:
        path: /file1/def
-     register: first
+     register: result
    - name: second file
      stat:
        path: /file2/def2
-     register: second
+     register: result
    - debug:
-       msg: "File compare"
+       var: result.stdout
 
 
