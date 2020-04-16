@@ -1,8 +1,12 @@
 - hosts: all
   become: true
+  gather_facts: no
+ 
   tasks:
    - name: Generate diff
-     command: diff  /file1/def  /file2/def2
-     register: diff_result
-   - debug:
-       msg: "{{diff_result}}"
+     copy:
+        src: /file1/def
+        dest: /file2/def2
+     check_mode: yes
+     diff: yes
+     
