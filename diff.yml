@@ -10,6 +10,7 @@
        path: /file2/def2
      register: result
    - debug:
+       var: result
        msg: "{{result.stdout}}"
 
 
